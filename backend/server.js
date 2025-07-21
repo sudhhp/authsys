@@ -16,12 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://authsys-7t2i.onrender.com", // Replace with your frontend's production domain
-    credentials: true,
-  })
-);
+app.use(cors({ origin: "https://your-frontend-domain.com", credentials: true }));
 app.use("/api/users", userRoutes);
 
 // Handle production environment
